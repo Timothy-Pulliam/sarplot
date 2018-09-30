@@ -163,7 +163,7 @@ class Application(tk.Frame):
         self.submit = tk.Button(self, text="Submit", command=self.submit)
         self.submit.grid(row=4)
 
-    def submit(self):
+    def submit(self, event):
         hostname = self.hostname.get()
         username = self.username.get()
         password = self.password.get()
