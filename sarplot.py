@@ -96,13 +96,13 @@ def plot(hostname):
     ax.xaxis_date()
     xfmt = md.DateFormatter('%H:%M:%S')
     ax.xaxis.set_major_formatter(xfmt)
-    plt.title('CPU usage on {}'.format(remote_host))
+    plt.title(f'CPU usage on {remote_host}')
     lines = plt.plot(dates, cpu_data[cpu_data.columns[2:]])
     ax.legend(lines, [str(col) for col in list(cpu_data.columns[2:])])
     
     # Plot Disk I/O
     fig, axes = plt.subplots(2, sharex=True)
-    fig.suptitle('Disk I/O on {}'.format(remote_host))
+    fig.suptitle(f'Disk I/O on {remote_host}')
     lines0 = axes[0].plot(dates, disk_data[disk_data.columns[1:4]])
     axes[0].legend(lines0, disk_data[disk_data.columns[1:4]])
     lines1 = axes[1].plot(dates, disk_data[disk_data.columns[4:]])
@@ -116,7 +116,7 @@ def plot(hostname):
     
     # Plot Memory
     fig, axes = plt.subplots(2, sharex=True)
-    fig.suptitle('Memory usage on {}'.format(remote_host))
+    fig.suptitle(f'Memory usage on {remote_host}')
     lines0 = axes[0].plot(dates, mem_data[mem_data.columns[1:3]])
     axes[0].legend(lines0, mem_data[mem_data.columns[1:3]])
     lines1 = axes[1].plot(dates, mem_data[mem_data.columns[4:8]])
